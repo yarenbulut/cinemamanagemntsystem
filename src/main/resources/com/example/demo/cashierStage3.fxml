@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="823.0" maxWidth="1303.0" prefHeight="823.0" prefWidth="1303.0" style="-fx-background-color: #ebe8c06c;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.cashierStage3Controller">
+   <center>
+      <AnchorPane maxHeight="823.0" maxWidth="1300.0" prefHeight="823.0" prefWidth="970.0" style="-fx-background-color: #ebe8c06c;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="seatWarningLabel" layoutX="90.0" layoutY="20.0" maxHeight="64.0" maxWidth="382.0" prefHeight="50.0" prefWidth="382.0" text="Please make your seat selection">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="sessionDetailsLabel" layoutX="501.0" layoutY="24.0" prefHeight="41.0" prefWidth="422.0" text="Label">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+              <GridPane fx:id="seatGrid" alignment="CENTER" hgap="10" layoutX="159.0" layoutY="177.0" maxHeight="531.0" maxWidth="1200.0" prefHeight="531.0" prefWidth="651.0" vgap="10">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </GridPane>
+            <Label alignment="CENTER" layoutX="238.0" layoutY="118.0" prefHeight="44.0" prefWidth="468.0" style="-fx-background-color: #000; -fx-background-radius: 20;" text="SCREEN" textFill="#f5ecd5">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <HBox layoutX="57.0" layoutY="749.0" prefHeight="47.0" prefWidth="355.0" spacing="20.0">
+               <children>
+                     <Button onAction="#goBackToSecondStage" prefHeight="45.0" prefWidth="254.0" style="-fx-background-color: #03031b;" text="Return" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button onAction="#handleLogout" prefHeight="45.0" prefWidth="254.0" style="-fx-background-color: #03031b;" text="Logout" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="823.0" prefWidth="311.0" style="-fx-background-color: #ebe8c06c; -fx-border-color: #3D3D3D;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="71.0" prefWidth="357.0" style="-fx-background-color: #03031b;" text="Shopping Cart" textFill="#ebe8c0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+               <Button layoutX="35.0" layoutY="744.0" onAction="#confirmSeatSelection" prefHeight="45.0" prefWidth="265.0" style="-fx-background-color: #03031b;" text="Confirm" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="32.0" layoutY="109.0" prefHeight="36.0" prefWidth="122.0" text="Selected Seats">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Text fx:id="selectedSeatsTexts" layoutX="35.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="209.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label layoutX="36.0" layoutY="578.0" prefHeight="36.0" prefWidth="261.0" text="Total Price:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Text fx:id="totalPrice" layoutX="38.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="257.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

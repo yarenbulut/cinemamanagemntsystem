@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="823.0" maxWidth="1303.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="1303.0" style="-fx-background-color: #ebe8c06c;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.adminController">
+   <center>
+      <AnchorPane fx:id="scheduleManagementPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane layoutX="3.0" prefHeight="823.0" prefWidth="1303.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Add Movie">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#000000bf" layoutX="71.0" layoutY="162.0" lineSpacing="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="This page is designed to add new movies to the database. Users can provide basic information about a movie to register it in the system." wrappingWidth="464.25">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <GridPane hgap="10.0" layoutX="652.0" layoutY="143.0" prefHeight="509.0" prefWidth="540.0" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="101.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="513.0" minWidth="10.0" prefWidth="429.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="275.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="titleField1" prefHeight="47.0" prefWidth="292.0" promptText="Please Enter Title of the Movie" GridPane.columnIndex="1" />
+                                    <Label prefHeight="46.0" prefWidth="293.0" text="Title">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Summary" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="summaryArea1" prefHeight="271.0" prefWidth="310.0" promptText="Enter Summary of the Movie" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                       <cursor>
+                                          <Cursor fx:constant="TEXT" />
+                                       </cursor>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </TextArea>
+                                    <Label text="Poster" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="genreComboBox1" prefHeight="42.0" prefWidth="465.0" promptText="Select a Genre" style="-fx-border-color: #0B191C; -fx-color: #ebe8c06c; -fx-text-color: #ebe8c06c;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ComboBox>
+                                    <Label text="Genre" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <TextField fx:id="posterField1" prefHeight="37.0" prefWidth="241.0" promptText="Browse Poster URL" />
+                                          <Button mnemonicParsing="false" onAction="#handleBrowsePosterForAdd" prefHeight="37.0" prefWidth="260.0" style="-fx-background-color: #0B191C;" text="Browse Poster" textFill="#ebe8c0" />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#handleAddMovie" prefHeight="48.0" prefWidth="467.0" style="-fx-background-color: #0B191C;" text="Add Movie" textFill="#ebe8c0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                 </children>
+                              </GridPane>
+                              <Accordion layoutX="66.0" layoutY="283.0" prefHeight="369.0" prefWidth="475.0">
+                                <panes>
+                                  <TitledPane animated="false" style="-fx-color: #0B191C;" text="Summary">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebe8c06c;">
+                                             <children>
+                                                <Text fill="#000000bf" layoutX="40.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Write a brief description or summary of the movie in this field." wrappingWidth="392.1259765625">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text layoutX="40.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For example: &quot;A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival.&quot;" wrappingWidth="406.236328125">
+                                                   <font>
+                                                      <Font name="System Italic" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" prefHeight="277.0" prefWidth="488.0" style="-fx-color: #0B191C;" text="Poster">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebe8c06c;">
+                                             <children>
+                                                <Text fill="#000000be" layoutX="59.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This field is used to specify the path of the movie's poster image. You can click the Browse Poster button to select an image from your system or enter the path manually." wrappingWidth="355.13671875">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#000000bf" layoutX="59.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Example: /img/Inception.jpg" wrappingWidth="363.236328125">
+                                                   <font>
+                                                      <Font name="System Italic" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" prefHeight="233.0" prefWidth="455.0" style="-fx-color: #0B191C;" text="Title">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebe8c06c;">
+                                             <children>
+                                                <Text fill="#000000c0" layoutX="55.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the title of the movie in this field. The title is used to identify the movie in the system." wrappingWidth="362.380859375">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fill="#000000bf" layoutX="54.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For example: Inception, The Dark Knight, Interstellar." wrappingWidth="363.236328125">
+                                                   <font>
+                                                      <Font name="System Italic" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                    <TitledPane animated="false" prefHeight="274.0" prefWidth="477.0" style="-fx-color: #0B191C;" text="Genre">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebe8c06c;">
+                                             <children>
+                                                <Text fill="#000000c0" layoutX="56.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use the dropdown menu to select the genre of the movie." wrappingWidth="361.13671875">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text layoutX="55.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For example: Drama, Science Fiction, Action, Comedy." wrappingWidth="363.236328125">
+                                                   <font>
+                                                      <Font name="System Italic" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" style="-fx-color: #0B191C;" text="Add Movie">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebe8c06c;">
+                                             <children>
+                                                <Text fill="#000000bd" layoutX="45.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="After filling in all the required fields, click this button to add the movie to the database. If any information is missing, the system will notify you." wrappingWidth="382.13671875">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                              <Label fx:id="name" layoutX="71.0" layoutY="36.0" prefHeight="62.0" prefWidth="462.0" text="Welcome Admin Çağla ">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="999.0" layoutY="52.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #0B191C;" text="Logout" textFill="#ebe8c0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Update Movie">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="581.0" prefWidth="905.0">
+                           <children>
+                              <GridPane hgap="10.0" layoutX="375.0" layoutY="148.0" prefHeight="498.0" prefWidth="553.0" vgap="10.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="115.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="513.0" minWidth="10.0" prefWidth="368.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="275.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="titleField" prefHeight="47.0" prefWidth="292.0" promptText="Please Enter Title of the Movie" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label prefHeight="46.0" prefWidth="293.0" text="Title" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Summary" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="summaryArea" prefHeight="271.0" prefWidth="310.0" promptText="Enter Summary of the Movie" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                       <cursor>
+                                          <Cursor fx:constant="TEXT" />
+                                       </cursor>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </TextArea>
+                                    <Label text="Poster" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="genreComboBox" prefHeight="43.0" prefWidth="433.0" promptText="Select a Genre" style="-fx-background-color: #ebe8c06c; -fx-border-color: #0B191C;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ComboBox>
+                                    <Label text="Genre" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <TextField fx:id="posterField" prefHeight="42.0" prefWidth="219.0" promptText="Browse Poster URL" />
+                                          <Button mnemonicParsing="false" onAction="#handleBrowsePosterForUpdate" prefHeight="44.0" prefWidth="217.0" style="-fx-background-color: #0B191C;" text="Browse Poster" textFill="#ebe8c0" />
+                                       </children>
+                                    </HBox>
+                                    <ComboBox fx:id="movieComboBox" prefHeight="40.0" prefWidth="442.0" promptText="Select a Movie to Update" style="-fx-background-color: #ebe8c06c; -fx-border-color: #0B191C;" GridPane.columnIndex="1" />
+                                    <Label text="Select Movie">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#handleUpdateMovie" prefHeight="43.0" prefWidth="481.0" style="-fx-background-color: #0B191C;" text="Button" textFill="#ebe8c0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Create or Update Schedule">
+                      <content>
+                          <AnchorPane>
+                           <HBox alignment="CENTER" layoutX="146.0" layoutY="176.0" prefHeight="422.0" prefWidth="1011.0" spacing="200.0">
+                              <children>
+                                    <GridPane hgap="10" prefHeight="418.0" prefWidth="409.0" vgap="10">
+                                        <children>
+                                            <Label text="Movie:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                            <ComboBox fx:id="movieComboboxForCreateSession" prefHeight="40.0" prefWidth="250.0" promptText="Select Movie" style="-fx-border-color: #0B191C; -fx-background-color: #ebe8c06c;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </ComboBox>
+      
+                                            <Label text="Hall:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                            <ComboBox fx:id="hallComboboxForCreateSession" prefHeight="40.0" prefWidth="259.0" promptText="Select Hall" style="-fx-border-color: #0B191C; -fx-background-color: #ebe8c06c;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </ComboBox>
+      
+                                            <Label text="Session Date:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                            <DatePicker fx:id="datePickerForCreateSession" prefHeight="40.0" prefWidth="255.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </DatePicker>
+      
+                                            <Label text="Start Time:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                            <TextField fx:id="createStartTimeField" prefHeight="40.0" prefWidth="266.0" promptText="HH:mm" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                          <cursor>
+                                             <Cursor fx:constant="TEXT" />
+                                          </cursor>
+                                       </TextField>
+      
+                                            <Label text="End Time:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                            <TextField fx:id="createEndTimeField" prefHeight="51.0" prefWidth="211.0" promptText="HH:mm" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                          <cursor>
+                                             <Cursor fx:constant="TEXT" />
+                                          </cursor>
+                                       </TextField>
+      
+                                            <Button onAction="#handleCreateSession" prefHeight="40.0" prefWidth="289.0" style="-fx-background-color: #0B191C;" text="Create Schedule" textFill="#ebe8c0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </Button>
+                                        </children>
+                                    <columnConstraints>
+                                       <ColumnConstraints maxWidth="143.0" minWidth="120.0" prefWidth="143.0" />
+                                       <ColumnConstraints maxWidth="243.0" minWidth="220.0" prefWidth="253.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                       <RowConstraints prefHeight="40.0" />
+                                       <RowConstraints prefHeight="40.0" />
+                                       <RowConstraints prefHeight="40.0" />
+                                       <RowConstraints prefHeight="40.0" />
+                                       <RowConstraints prefHeight="40.0" />
+                                       <RowConstraints prefHeight="40.0" />
+                                    </rowConstraints>
+                                    </GridPane>
+                                 <GridPane hgap="20.0" prefHeight="405.0" prefWidth="393.0" vgap="20.0">
+                                    <children>
+                                       <Label text="Movie:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <ComboBox fx:id="movieComboboxForUpdateSession" prefHeight="40.0" prefWidth="300.0" promptText="Select Movie" style="-fx-border-color: #0B191C; -fx-background-color: #ebe8c06c;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </ComboBox>
+                                       <Label text="Hall:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <ComboBox fx:id="hallComboboxForUpdateSession" prefHeight="40.0" prefWidth="254.0" promptText="Select Hall" style="-fx-border-color: #0B191C; -fx-background-color: #ebe8c06c;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </ComboBox>
+                                       <Label prefHeight="27.0" prefWidth="125.0" text="Session Date:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <DatePicker fx:id="datePickerForUpdateSession" prefHeight="40.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </DatePicker>
+                                       <Label text="Start Time:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <TextField fx:id="updateStartTimeField" prefHeight="40.0" prefWidth="197.0" promptText="HH:mm" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                          <cursor>
+                                             <Cursor fx:constant="TEXT" />
+                                          </cursor>
+                                       </TextField>
+                                       <Label text="End Time:" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                       <TextField fx:id="updateEndTimeField" prefHeight="40.0" prefWidth="233.0" promptText="HH:mm" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                          <cursor>
+                                             <Cursor fx:constant="TEXT" />
+                                          </cursor>
+                                       </TextField>
+                                       <Button onAction="#handleUpdateSession" prefHeight="34.0" prefWidth="282.0" style="-fx-background-color: #0B191C;" text="Update Schedule" textFill="#ebe8c0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </Button>
+                                       <ComboBox fx:id="sessionComboboxForUpdateSession" prefHeight="40.0" prefWidth="254.0" promptText="Session" style="-fx-border-color: #0B191C; -fx-background-color: #ebe8c06c;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                          <cursor>
+                                             <Cursor fx:constant="HAND" />
+                                          </cursor>
+                                       </ComboBox>
+                                       <Label text="Session" GridPane.rowIndex="2">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                    <columnConstraints>
+                                       <ColumnConstraints maxWidth="197.0" minWidth="76.0" prefWidth="123.0" />
+                                       <ColumnConstraints maxWidth="258.0" minWidth="250.0" prefWidth="211.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                       <RowConstraints prefHeight="40.0" />
+                                       <RowConstraints prefHeight="40.0" />
+                                       <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="40.0" />
+                                       <RowConstraints maxHeight="40.0" minHeight="11.0" prefHeight="40.0" />
+                                       <RowConstraints maxHeight="49.0" minHeight="4.0" prefHeight="40.0" />
+                                       <RowConstraints maxHeight="46.0" minHeight="8.0" prefHeight="40.0" />
+                                       <RowConstraints maxHeight="34.0" minHeight="6.0" prefHeight="40.0" />
+                                    </rowConstraints>
+                                 </GridPane>
+                              </children>
+                           </HBox>
+                           <Label layoutX="146.0" layoutY="117.0" text="Fill the form below to CREATE new session.">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="766.0" layoutY="117.0" text="Fill the form below to UPDATE a session.">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                          </AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab text="Process Cancellation">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="67.0" layoutY="58.0" prefHeight="42.0" prefWidth="352.0" text="Please Fill the Form Below to see Tickets">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="ticketTableView" layoutX="613.0" layoutY="79.0" prefHeight="227.0" prefWidth="567.0">
+                                <columns>
+                                  <TableColumn fx:id="ticketIDColumn" prefWidth="96.0" style="-fx-color: #ebe8c06c;" text="TicketID " />
+                                  <TableColumn fx:id="sessionIDColumn" prefWidth="121.0" style="-fx-color: #ebe8c06c;" text="SessionID " />
+                                    <TableColumn fx:id="seatIDColumn" prefWidth="112.0" style="-fx-color: #ebe8c06c;" text="Seat ID " />
+                                    <TableColumn fx:id="priceColumn" prefWidth="107.0" style="-fx-color: #ebe8c06c;" text="Price" />
+                                    <TableColumn fx:id="discountedPriceColumn" prefWidth="135.0" style="-fx-color: #ebe8c06c;" text="Discounted Price" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <TableView fx:id="productTableView" layoutX="614.0" layoutY="376.0" prefHeight="227.0" prefWidth="566.0">
+                                <columns>
+                                  <TableColumn fx:id="productColumn" prefWidth="141.0" style="-fx-color: #ebe8c06c;" text="Product" />
+                                  <TableColumn fx:id="quantityColumn" prefWidth="135.0" style="-fx-color: #ebe8c06c;" text="Quantity " />
+                                    <TableColumn fx:id="productPriceColumn" prefWidth="132.0" style="-fx-color: #ebe8c06c;" text="Price" />
+                                    <TableColumn fx:id="productTotalPriceColumn" prefWidth="129.0" style="-fx-color: #ebe8c06c;" text="Total Price" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Button fx:id="cancelTicketButton" layoutX="942.0" layoutY="321.0" mnemonicParsing="false" onAction="#handleCancelTicketButton" prefHeight="32.0" prefWidth="238.0" style="-fx-background-color: #0B191C;" text="Cancel Selected Ticket" textFill="#ebe8c0" />
+                              <Button fx:id="cancelProductButton" layoutX="942.0" layoutY="623.0" mnemonicParsing="false" onAction="#handleCancelProductButton" prefHeight="32.0" prefWidth="238.0" style="-fx-background-color: #0B191C;" text="Cancel Selected Product" textFill="#ebe8c0" />
+                              <GridPane layoutX="67.0" layoutY="128.0" prefHeight="239.0" prefWidth="435.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="customerNameField" prefHeight="40.0" prefWidth="195.0" GridPane.columnIndex="1" />
+                                    <TextField fx:id="customerSurnameField" prefHeight="40.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="sessionIDField" prefHeight="40.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Button fx:id="filterButton" mnemonicParsing="false" onAction="#handleFilterTickets" prefHeight="35.0" prefWidth="252.0" style="-fx-background-color: #0B191C;" text="Filter Tickets" textFill="#ebe8c0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label prefHeight="38.0" prefWidth="215.0" text="Customer Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                    <Label prefHeight="38.0" prefWidth="266.0" text="Customer Surname " GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                    <Label prefHeight="38.0" prefWidth="266.0" text="Session ID " GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

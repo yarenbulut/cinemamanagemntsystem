@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="823.0" prefWidth="1303.0" style="-fx-background-color: #ebe8c06c;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.managerController">
+   <children>
+
+      <Label layoutX="77.0" layoutY="109.0" text="Select a product from the table and enter the stock quantity to update.">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="productTable" layoutX="77.0" layoutY="186.0" prefHeight="431.0" prefWidth="689.0" style="-fx-background-color: #ebe8c06c; -fx-color: #ebe8c06c;">
+         <columns>
+            <TableColumn fx:id="colProductId" prefWidth="100.0" text="Product ID" />
+            <TableColumn fx:id="colProductName" prefWidth="263.0" text="Product Name" />
+            <TableColumn fx:id="colProductPrice" prefWidth="175.0" text="Price" />
+            <TableColumn fx:id="colProductStock" prefWidth="150.0" text="Stock" />
+         </columns>
+      </TableView>
+      <Label layoutX="838.0" layoutY="362.0" text="Add Stock:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="46.0" prefHeight="45.0" prefWidth="359.0" text="Welcome Manager Çağla">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="970.0" layoutY="269.0" prefHeight="286.0" prefWidth="221.0" spacing="30.0">
+         <children>
+            <TextField fx:id="txtStockUpdate" prefHeight="45.0" prefWidth="234.0" promptText="Enter stock quantity" />
+            <Button fx:id="btnUpdateStock" onAction="#handleUpdateStock" prefHeight="45.0" prefWidth="234.0" style="-fx-background-color: #03031b;" text="Update Stock" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </VBox>
+      <Button layoutX="77.0" layoutY="707.0" onAction="#handleLogout" prefHeight="45.0" prefWidth="234.0" style="-fx-background-color: #03031b;" text="Logout" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>
